@@ -1,0 +1,8 @@
+customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,TotalServices
+7590-VHVEG,Female,0,Yes,No,8,Yes,No,DSL,Yes,Yes,No,No,No,No,One year,Yes,Electronic check,34.90,279.20,3
+5575-GNVDE,Male,0,No,Yes,48,Yes,Yes,DSL,Yes,Yes,Yes,Yes,No,No,Two year,No,Mailed check,68.50,3288.00,5
+3668-QPYBK,Male,0,No,No,3,Yes,No,DSL,No,No,No,No,No,No,Month-to-month,Yes,Mailed check,55.10,162.30,1
+CUST-2001,Female,0,No,No,1,Yes,No,Fiber optic,No,No,No,No,No,No,Month-to-month,Yes,Electronic check,80.20,80.20,1
+CUST-2002,Male,1,Yes,No,2,Yes,Yes,Fiber optic,No,No,No,No,Yes,Yes,Month-to-month,Yes,Electronic check,105.60,215.40,4
+CUST-2003,Female,0,Yes,Yes,52,Yes,Yes,DSL,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Credit card (automatic),98.30,5112.60,8
+CUST-2004,Male,0,No,No,15,Yes,No,No,No internet service,No internet service,No internet service,No internet service,No internet service,No internet service,Month-to-month,No,Bank transfer (automatic),20.05,300.75,1
