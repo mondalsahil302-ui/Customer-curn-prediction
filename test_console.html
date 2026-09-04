@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        TelcoConnect - Test Data Console
+    </title>
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* =====================================================
+           THEME VARIABLES
+        ====================================================== */
+
+        :root {
+
+            --blue: #2874f0;
+            --blue-dark: #1d5fc4;
+            --blue-light: #e8f0fe;
+
+            --background: #f1f3f6;
+            --card: #ffffff;
+
+            --text: #212121;
+            --muted: #878787;
+
+            --border: #e0e0e0;
+
+            --success: #2e7d32;
+            --error: #d32f2f;
+
+        }
+
+
+        /* =====================================================
+           BODY
+        ====================================================== */
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                var(--background);
+
+            color:
+                var(--text);
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ====================================================== */
+
+        .container {
+
+            width: min(
+                900px,
+                92%
+            );
+
+            margin:
+                50px auto;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .header {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .brand {
+
+            color:
+                var(--blue);
+
+            font-size:
+                20px;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .header-right {
+
+            display: flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+        }
+
+
+        /* =====================================================
+           THEME BUTTON
+        ====================================================== */
+
+        .theme-button {
+
+            width:
+                42px;
+
+            height:
+                42px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--card);
+
+            color:
+                var(--text);
+
+            border-radius:
+                4px;
+
+            cursor:
+                pointer;
+
+            font-size:
+                17px;
+
+        }
+
+
+        .theme-button:hover {
+
+            background:
+                var(--blue-light);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            padding:
+                26px;
+
+            margin-bottom:
+                16px;
+
+        }
+
+
+        .hero-label {
+
+            color:
+                var(--blue);
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                0.6px;
+
+            margin-bottom:
+                6px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                26px;
+
+            font-weight:
+                600;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .hero p {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           GENERATOR CARD
+        ====================================================== */
+
+        .generator-card {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            padding:
+                26px;
+
+            margin-bottom:
+                16px;
+
+        }
+
+
+        .generator-title {
+
+            font-size:
+                18px;
+
+            font-weight:
+                600;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .generator-description {
+
+            color:
+                var(--muted);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.6;
+
+            margin-bottom:
+                22px;
+
+        }
+
+
+        /* =====================================================
+           SUMMARY CARDS
+        ====================================================== */
+
+        .summary-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap:
+                12px;
+
+            margin-bottom:
+                22px;
+
+        }
+
+
+        .summary-card {
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--background);
+
+            padding:
+                18px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .summary-label {
+
+            display:
+                block;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+
+            font-weight:
+                700;
+
+            margin-bottom:
+                8px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .summary-value {
+
+            display:
+                block;
+
+            color:
+                var(--blue);
+
+            font-size:
+                26px;
+
+            font-weight:
+                700;
+
+        }
+
+
+        /* =====================================================
+           GENERATE BUTTON
+        ====================================================== */
+
+        .generate-button {
+
+            width:
+                100%;
+
+            height:
+                48px;
+
+            border:
+                none;
+
+            border-radius:
+                4px;
+
+            background:
+                var(--blue);
+
+            color:
+                #ffffff;
+
+            font-size:
+                14px;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .generate-button:hover {
+
+            background:
+                var(--blue-dark);
+
+        }
+
+
+        .generate-button:disabled {
+
+            opacity:
+                0.6;
+
+            cursor:
+                not-allowed;
+
+        }
+
+
+        /* =====================================================
+           STATUS
+        ====================================================== */
+
+        .status-box {
+
+            margin-top:
+                16px;
+
+            padding:
+                15px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--background);
+
+        }
+
+
+        .status-label {
+
+            color:
+                var(--muted);
+
+            font-size:
+                10px;
+
+            font-weight:
+                700;
+
+            text-transform:
+                uppercase;
+
+            margin-bottom:
+                6px;
+
+        }
+
+
+        .status {
+
+            font-size:
+                13px;
+
+            font-weight:
+                600;
+
+        }
+
+
+        .status-ready {
+
+            color:
+                var(--muted);
+
+        }
+
+
+        .status-loading {
+
+            color:
+                var(--blue);
+
+        }
+
+
+        .status-success {
+
+            color:
+                var(--success);
+
+        }
+
+
+        .status-error {
+
+            color:
+                var(--error);
+
+        }
+
+
+        /* =====================================================
+           RESULT
+        ====================================================== */
+
+        .result-card {
+
+            display:
+                none;
+
+            background:
+                var(--card);
+
+            border:
+                1px solid var(--border);
+
+            padding:
+                24px;
+
+        }
+
+
+        .result-title {
+
+            font-size:
+                17px;
+
+            font-weight:
+                600;
+
+            margin-bottom:
+                16px;
+
+        }
+
+
+        .result-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap:
+                12px;
+
+        }
+
+
+        .result-item {
+
+            border:
+                1px solid var(--border);
+
+            padding:
+                16px;
+
+            background:
+                var(--background);
+
+        }
+
+
+        .result-item span {
+
+            display:
+                block;
+
+            color:
+                var(--muted);
+
+            font-size:
+                11px;
+
+            margin-bottom:
+                7px;
+
+        }
+
+
+        .result-item strong {
+
+            font-size:
+                20px;
+
+        }
+
+
+        /* =====================================================
+           ERROR BOX
+        ====================================================== */
+
+        .error-box {
+
+            display:
+                none;
+
+            margin-top:
+                16px;
+
+            padding:
+                14px;
+
+            border:
+                1px solid #f3b4b4;
+
+            background:
+                #fff2f2;
+
+            color:
+                var(--error);
+
+            font-size:
+                12px;
+
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ====================================================== */
+
+        body.dark {
+
+            --background: #121212;
+
+            --card: #1b1b1b;
+
+            --text: #f2f2f2;
+
+            --muted: #a0a0a0;
+
+            --border: #303030;
+
+        }
+
+
+        body.dark
+        .summary-card,
+        body.dark
+        .result-item {
+
+            background:
+                #242424;
+
+        }
+
+
+        body.dark
+        .theme-button {
+
+            background:
+                #1b1b1b;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (
+            max-width: 650px
+        ) {
+
+            .summary-grid,
+            .result-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .container {
+
+                margin:
+                    25px auto;
+
+            }
+
+
+            .hero,
+            .generator-card,
+            .result-card {
+
+                padding:
+                    20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MAIN CONTAINER
+    ====================================================== -->
+
+    <div class="container">
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="header">
+
+            <div class="brand">
+                TELCOCONNECT
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    type="button"
+                    class="theme-button"
+                    id="themeButton"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-label">
+                DEVELOPER TEST CONSOLE
+            </div>
+
+
+            <h1>
+                Customer Data Generator
+            </h1>
+
+
+            <p>
+                Generate controlled customer activity
+                for testing the Churn and LTV prediction
+                pipeline.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GENERATOR
+        ================================================== -->
+
+        <section class="generator-card">
+
+
+            <div class="generator-title">
+                Generate Test Data
+            </div>
+
+
+            <div class="generator-description">
+
+                This action will send a request to the
+                FastAPI backend. The backend will generate:
+
+                <strong>
+                    150 updates
+                </strong>
+
+                to existing customers and
+
+                <strong>
+                    50 new customer records
+                </strong>
+
+                in Neon PostgreSQL.
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUMMARY
+            ================================================== -->
+
+            <div class="summary-grid">
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        Existing Updates
+                    </span>
+
+                    <span class="summary-value">
+                        150
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        New Inserts
+                    </span>
+
+                    <span class="summary-value">
+                        50
+                    </span>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span class="summary-label">
+                        Total
+                    </span>
+
+                    <span class="summary-value">
+                        200
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BUTTON
+            ================================================== -->
+
+            <button
+                type="button"
+                class="generate-button"
+                id="generateButton"
+            >
+                GENERATE TEST DATA
+            </button>
+
+
+
+            <!-- =================================================
+                 STATUS
+            ================================================== -->
+
+            <div class="status-box">
+
+                <div class="status-label">
+                    Status
+                </div>
+
+
+                <div
+                    id="statusText"
+                    class="status status-ready"
+                >
+                    Ready to generate test data.
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ERROR
+            ================================================== -->
+
+            <div
+                id="errorBox"
+                class="error-box"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <section
+            class="result-card"
+            id="resultCard"
+        >
+
+            <div class="result-title">
+                Database Generation Result
+            </div>
+
+
+            <div class="result-grid">
+
+
+                <!-- Updated -->
+
+                <div class="result-item">
+
+                    <span>
+                        Existing Updated
+                    </span>
+
+                    <strong
+                        id="updatedResult"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- Inserted -->
+
+                <div class="result-item">
+
+                    <span>
+                        New Inserted
+                    </span>
+
+                    <strong
+                        id="insertedResult"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+                <!-- Total -->
+
+                <div class="result-item">
+
+                    <span>
+                        Total Affected
+                    </span>
+
+                    <strong
+                        id="totalResult"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        // ====================================================
+        // API CONFIGURATION
+        // ====================================================
+
+        const API_URL =
+            "http://127.0.0.1:8000/generate-test-data";
+
+
+        // ====================================================
+        // ELEMENTS
+        // ====================================================
+
+        const generateButton =
+            document.getElementById(
+                "generateButton"
+            );
+
+
+        const statusText =
+            document.getElementById(
+                "statusText"
+            );
+
+
+        const resultCard =
+            document.getElementById(
+                "resultCard"
+            );
+
+
+        const updatedResult =
+            document.getElementById(
+                "updatedResult"
+            );
+
+
+        const insertedResult =
+            document.getElementById(
+                "insertedResult"
+            );
+
+
+        const totalResult =
+            document.getElementById(
+                "totalResult"
+            );
+
+
+        const errorBox =
+            document.getElementById(
+                "errorBox"
+            );
+
+
+        const themeButton =
+            document.getElementById(
+                "themeButton"
+            );
+
+
+        // ====================================================
+        // DARK / LIGHT MODE
+        // ====================================================
+
+        function applyTheme(
+            theme
+        ) {
+
+            if (
+                theme === "dark"
+            ) {
+
+                document.body.classList.add(
+                    "dark"
+                );
+
+
+                themeButton.textContent =
+                    "☀️";
+
+            } else {
+
+                document.body.classList.remove(
+                    "dark"
+                );
+
+
+                themeButton.textContent =
+                    "🌙";
+
+            }
+
+        }
+
+
+        function loadTheme() {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "customerTheme"
+                );
+
+
+            applyTheme(
+                savedTheme === "dark"
+                    ? "dark"
+                    : "light"
+            );
+
+        }
+
+
+        themeButton.addEventListener(
+            "click",
+            function () {
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark"
+                    );
+
+
+                const newTheme =
+                    isDark
+                        ? "light"
+                        : "dark";
+
+
+                localStorage.setItem(
+                    "customerTheme",
+                    newTheme
+                );
+
+
+                applyTheme(
+                    newTheme
+                );
+
+            }
+        );
+
+
+        // ====================================================
+        // GENERATE TEST DATA
+        // ====================================================
+
+        generateButton.addEventListener(
+            "click",
+            async function () {
+
+
+                // ----------------------------------------------
+                // RESET
+                // ----------------------------------------------
+
+                errorBox.style.display =
+                    "none";
+
+
+                resultCard.style.display =
+                    "none";
+
+
+                // ----------------------------------------------
+                // DISABLE BUTTON
+                // ----------------------------------------------
+
+                generateButton.disabled =
+                    true;
+
+
+                generateButton.textContent =
+                    "GENERATING...";
+
+
+                // ----------------------------------------------
+                // STATUS
+                // ----------------------------------------------
+
+                statusText.className =
+                    "status status-loading";
+
+
+                statusText.textContent =
+                    "Sending request to FastAPI...";
+
+
+                try {
+
+
+                    // ------------------------------------------
+                    // API REQUEST
+                    // ------------------------------------------
+
+                    const response =
+                        await fetch(
+                            API_URL,
+                            {
+                                method:
+                                    "POST",
+
+                                headers:
+                                    {
+                                        "Content-Type":
+                                            "application/json"
+                                    }
+                            }
+                        );
+
+
+                    // ------------------------------------------
+                    // CHECK RESPONSE
+                    // ------------------------------------------
+
+                    if (
+                        !response.ok
+                    ) {
+
+                        throw new Error(
+                            "FastAPI returned HTTP " +
+                            response.status
+                        );
+
+                    }
+
+
+                    // ------------------------------------------
+                    // READ JSON
+                    // ------------------------------------------
+
+                    const data =
+                        await response.json();
+
+
+                    // ------------------------------------------
+                    // CHECK SUCCESS
+                    // ------------------------------------------
+
+                    if (
+                        data.success !== true
+                    ) {
+
+                        throw new Error(
+                            "Test data generation failed."
+                        );
+
+                    }
+
+
+                    // ------------------------------------------
+                    // DISPLAY RESULT
+                    // ------------------------------------------
+
+                    updatedResult.textContent =
+                        data.updated;
+
+
+                    insertedResult.textContent =
+                        data.inserted;
+
+
+                    totalResult.textContent =
+                        data.total;
+
+
+                    resultCard.style.display =
+                        "block";
+
+
+                    // ------------------------------------------
+                    // SUCCESS STATUS
+                    // ------------------------------------------
+
+                    statusText.className =
+                        "status status-success";
+
+
+                    statusText.textContent =
+                        "Test data generated successfully.";
+
+                }
+
+
+                catch (
+                    error
+                ) {
+
+
+                    // ------------------------------------------
+                    // ERROR
+                    // ------------------------------------------
+
+                    console.error(
+                        "Generation error:",
+                        error
+                    );
+
+
+                    statusText.className =
+                        "status status-error";
+
+
+                    statusText.textContent =
+                        "Generation failed.";
+
+
+                    errorBox.style.display =
+                        "block";
+
+
+                    errorBox.textContent =
+                        error.message;
+
+                }
+
+
+                finally {
+
+
+                    // ------------------------------------------
+                    // ENABLE BUTTON
+                    // ------------------------------------------
+
+                    generateButton.disabled =
+                        false;
+
+
+                    generateButton.textContent =
+                        "GENERATE TEST DATA";
+
+                }
+
+            }
+        );
+
+
+        // ====================================================
+        // INITIALIZE
+        // ====================================================
+
+        loadTheme();
+
+    </script>
+
+</body>
+
+</html>
